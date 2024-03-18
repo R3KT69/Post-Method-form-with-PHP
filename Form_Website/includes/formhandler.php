@@ -5,10 +5,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $lastname = htmlspecialchars($_POST["lastname"]); 
     $pets = htmlspecialchars($_POST["favouritepet"]); 
 
-    if (empty($firstname)) {
-            header("Location: ../index.php");
-            exit();
-        }
+    if (empty($firstname) or empty($lastname) or empty($firstname) and empty($lastname)) {
+        header("Location: ../index.php");
+        exit();
+    }
     
     $random = rand(0,999);
 
